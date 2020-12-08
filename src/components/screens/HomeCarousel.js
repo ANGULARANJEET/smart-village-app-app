@@ -36,7 +36,11 @@ export const HomeCarousel = ({ navigation, refreshing }) => {
     );
   }
 
-  const fetchPolicy = graphqlFetchPolicy({ isConnected, isMainserverUp, refreshTime });
+  const fetchPolicy = graphqlFetchPolicy({
+    isConnected,
+    isMainserverUp,
+    refreshTime
+  });
 
   return (
     <Query

@@ -172,7 +172,10 @@ export const HomeScreen = ({ navigation }) => {
                   <Touchable
                     onPress={() =>
                       navigation.navigate(
-                        NAVIGATION.NEWS_ITEMS_INDEX({ categoryId, categoryTitle })
+                        NAVIGATION.NEWS_ITEMS_INDEX({
+                          categoryId,
+                          categoryTitle
+                        })
                       )
                     }
                   >
@@ -256,7 +259,10 @@ export const HomeScreen = ({ navigation }) => {
                             title={categoryButton}
                             onPress={() =>
                               navigation.navigate(
-                                NAVIGATION.NEWS_ITEMS_INDEX({ categoryId, categoryTitle })
+                                NAVIGATION.NEWS_ITEMS_INDEX({
+                                  categoryId,
+                                  categoryTitle
+                                })
                               )
                             }
                           />

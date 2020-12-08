@@ -45,9 +45,9 @@ const { LIST_TYPES, MATOMO_TRACKING } = consts;
 /* NOTE: we need to check a lot for presence, so this is that complex */
 const getListItems = (query, data) => {
   switch (query) {
-  case QUERY_TYPES.EVENT_RECORDS:
-    return (
-      data &&
+    case QUERY_TYPES.EVENT_RECORDS:
+      return (
+        data &&
         data[query] &&
         data[query].map((eventRecord) => ({
           id: eventRecord.id,
@@ -73,10 +73,10 @@ const getListItems = (query, data) => {
             details: eventRecord
           }
         }))
-    );
-  case QUERY_TYPES.NEWS_ITEMS:
-    return (
-      data &&
+      );
+    case QUERY_TYPES.NEWS_ITEMS:
+      return (
+        data &&
         data[query] &&
         data[query].map((newsItem) => ({
           id: newsItem.id,
@@ -112,10 +112,10 @@ const getListItems = (query, data) => {
             details: newsItem
           }
         }))
-    );
-  case QUERY_TYPES.POINTS_OF_INTEREST:
-    return (
-      data &&
+      );
+    case QUERY_TYPES.POINTS_OF_INTEREST:
+      return (
+        data &&
         data[query] &&
         data[query].map((pointOfInterest) => ({
           id: pointOfInterest.id,
@@ -139,10 +139,10 @@ const getListItems = (query, data) => {
             }
           }
         }))
-    );
-  case QUERY_TYPES.TOURS:
-    return (
-      data &&
+      );
+    case QUERY_TYPES.TOURS:
+      return (
+        data &&
         data[query] &&
         data[query].map((tour) => ({
           id: tour.id,
@@ -166,11 +166,11 @@ const getListItems = (query, data) => {
             }
           }
         }))
-    );
+      );
 
-  case QUERY_TYPES.CATEGORIES: {
-    return (
-      data &&
+    case QUERY_TYPES.CATEGORIES: {
+      return (
+        data &&
         data[query] &&
         data[query].map((category) => ({
           id: category.id,
@@ -188,8 +188,8 @@ const getListItems = (query, data) => {
             rootRouteName: category.pointsOfInterestCount > 0 ? 'PointsOfInterest' : 'Tours'
           }
         }))
-    );
-  }
+      );
+    }
   }
 };
 /* eslint-enable complexity */
