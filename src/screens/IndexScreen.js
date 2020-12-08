@@ -1,5 +1,8 @@
+import _filter from 'lodash/filter';
+import { useMatomo } from 'matomo-tracker-react-native';
 import PropTypes from 'prop-types';
 import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { Query } from 'react-apollo';
 import {
   ActivityIndicator,
   RefreshControl,
@@ -7,14 +10,8 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { Query } from 'react-apollo';
-import { useMatomo } from 'matomo-tracker-react-native';
-import _filter from 'lodash/filter';
 
-import { NetworkContext } from '../NetworkProvider';
-import { SettingsContext } from '../SettingsProvider';
 import { auth } from '../auth';
-import { colors, consts, normalize } from '../config';
 import {
   CardList,
   CategoryList,
@@ -27,8 +24,7 @@ import {
   LocationOverview,
   MapSwitchHeader
 } from '../components';
-import { getQuery, getFetchMoreQuery, QUERY_TYPES } from '../queries';
-import { arrowLeft } from '../icons';
+import { colors, consts, normalize } from '../config';
 import {
   eventDate,
   graphqlFetchPolicy,
@@ -38,6 +34,10 @@ import {
   shareMessage,
   subtitle
 } from '../helpers';
+import { arrowLeft } from '../icons';
+import { NetworkContext } from '../NetworkProvider';
+import { getQuery, getFetchMoreQuery, QUERY_TYPES } from '../queries';
+import { SettingsContext } from '../SettingsProvider';
 
 const { LIST_TYPES, MATOMO_TRACKING } = consts;
 

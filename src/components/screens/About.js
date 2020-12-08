@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import { View } from 'react-native';
 import { Query } from 'react-apollo';
+import { View } from 'react-native';
 
-import { NetworkContext } from '../../NetworkProvider';
-import { SettingsContext } from '../../SettingsProvider';
 import { consts, device, texts } from '../../config';
-import { Title, TitleContainer, TitleShadow } from '../Title';
-import { TextList } from '../TextList';
-import { getQuery, QUERY_TYPES } from '../../queries';
 import { graphqlFetchPolicy, refreshTimeFor } from '../../helpers';
+import { NetworkContext } from '../../NetworkProvider';
+import { getQuery, QUERY_TYPES } from '../../queries';
+import { SettingsContext } from '../../SettingsProvider';
+import { TextList } from '../TextList';
+import { Title, TitleContainer, TitleShadow } from '../Title';
 
 export const About = ({ navigation, refreshing }) => {
   const [refreshTime, setRefreshTime] = useState();

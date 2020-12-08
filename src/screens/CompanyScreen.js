@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
+import { Query } from 'react-apollo';
 import {
   ActivityIndicator,
   RefreshControl,
@@ -8,12 +9,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
-import { Query } from 'react-apollo';
 
-import { NetworkContext } from '../NetworkProvider';
-import { OrientationContext } from '../OrientationProvider';
-import { SettingsContext } from '../SettingsProvider';
-import { colors, consts, device, normalize, texts } from '../config';
 import {
   BoldText,
   Icon,
@@ -26,9 +22,13 @@ import {
   TitleShadow,
   WrapperWrap
 } from '../components';
-import { getQuery, QUERY_TYPES } from '../queries';
+import { colors, consts, device, normalize, texts } from '../config';
 import { graphqlFetchPolicy, refreshTimeFor } from '../helpers';
 import { useMatomoTrackScreenView } from '../hooks';
+import { NetworkContext } from '../NetworkProvider';
+import { OrientationContext } from '../OrientationProvider';
+import { getQuery, QUERY_TYPES } from '../queries';
+import { SettingsContext } from '../SettingsProvider';
 
 const { MATOMO_TRACKING, REFRESH_INTERVALS } = consts;
 

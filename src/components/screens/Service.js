@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Query } from 'react-apollo';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
+import { consts, device, normalize, texts } from '../../config';
+import { colors } from '../../config';
+import { graphqlFetchPolicy, refreshTimeFor } from '../../helpers';
 import { NetworkContext } from '../../NetworkProvider';
 import { OrientationContext } from '../../OrientationProvider';
+import { getQuery, QUERY_TYPES } from '../../queries';
 import { SettingsContext } from '../../SettingsProvider';
-import { colors, consts, device, normalize, texts } from '../../config';
 import { DiagonalGradient } from '../DiagonalGradient';
+import { Icon } from '../Icon';
 import { Image } from '../Image';
 import { ServiceBox } from '../ServiceBox';
 import { BoldText } from '../Text';
 import { Title, TitleContainer, TitleShadow } from '../Title';
 import { WrapperWrap } from '../Wrapper';
-import { getQuery, QUERY_TYPES } from '../../queries';
-import { Icon } from '../Icon';
-import { graphqlFetchPolicy, refreshTimeFor } from '../../helpers';
 
 export const Service = ({ navigation, refreshing }) => {
   const [refreshTime, setRefreshTime] = useState();

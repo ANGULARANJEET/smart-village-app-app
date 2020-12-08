@@ -1,15 +1,15 @@
+import _shuffle from 'lodash/shuffle';
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import { ActivityIndicator } from 'react-native';
 import { Query } from 'react-apollo';
-import _shuffle from 'lodash/shuffle';
+import { ActivityIndicator } from 'react-native';
 
-import { NetworkContext } from '../../NetworkProvider';
 import { colors, consts } from '../../config';
+import { graphqlFetchPolicy, refreshTimeFor } from '../../helpers';
+import { NetworkContext } from '../../NetworkProvider';
+import { getQuery, QUERY_TYPES } from '../../queries';
 import { ImagesCarousel } from '../ImagesCarousel';
 import { LoadingContainer } from '../LoadingContainer';
-import { getQuery, QUERY_TYPES } from '../../queries';
-import { graphqlFetchPolicy, refreshTimeFor } from '../../helpers';
 
 export const HomeCarousel = ({ navigation, refreshing }) => {
   const [refreshTime, setRefreshTime] = useState();

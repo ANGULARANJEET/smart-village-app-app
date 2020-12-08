@@ -1,11 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import { ActivityIndicator, RefreshControl, ScrollView } from 'react-native';
 import { Query } from 'react-apollo';
+import { ActivityIndicator, RefreshControl, ScrollView } from 'react-native';
 
-import { NetworkContext } from '../NetworkProvider';
-import { SettingsContext } from '../SettingsProvider';
-import { colors, consts, device, texts } from '../config';
 import {
   LoadingContainer,
   SafeAreaViewFlex,
@@ -15,9 +12,12 @@ import {
   TitleShadow,
   VersionNumber
 } from '../components';
-import { getQuery, QUERY_TYPES } from '../queries';
+import { colors, consts, device, texts } from '../config';
 import { graphqlFetchPolicy, refreshTimeFor } from '../helpers';
 import { useMatomoTrackScreenView } from '../hooks';
+import { NetworkContext } from '../NetworkProvider';
+import { getQuery, QUERY_TYPES } from '../queries';
+import { SettingsContext } from '../SettingsProvider';
 
 const { MATOMO_TRACKING, REFRESH_INTERVALS } = consts;
 
