@@ -29,6 +29,7 @@ import {
   TitleShadow,
   Touchable,
   VersionNumber,
+  WeatherWidget,
   Wrapper,
   WrapperRow
 } from '../components';
@@ -153,6 +154,7 @@ export const HomeScreen = ({ navigation }) => {
         }
       >
         <HomeCarousel navigation={navigation} />
+        <WeatherWidget />
 
         {showNews &&
           categoriesNews.map(
